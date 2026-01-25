@@ -8,6 +8,7 @@ public class BallController : MonoBehaviour
     //drag drop the Joystick child in the Inspector to animate
     // the joystick when moved
     public Transform Joystick;
+    public GameObject ball;
 
     //this refers to the vive's touch pad or oculus's joystick
     public SteamVR_Action_Vector2 moveAction = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("platformer", "Move");
@@ -35,7 +36,7 @@ public class BallController : MonoBehaviour
         interactable = GetComponent<Interactable>();
 
         //get the ball's Rigidbody so we can add force to it
-        ballRb = GameObject.Find("/Ball").GetComponent<Rigidbody>();
+        ballRb = ball.GetComponent<Rigidbody>();
     }
 
     private void Update()
